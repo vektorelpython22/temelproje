@@ -1,4 +1,4 @@
 from Tools.FileTools import FileTool
-galeri = FileTool(isim=r"UGUR\Galeri",alan=["Marka",\
-    "Model","Fiyat"])
-galeri.menu()
+banka = FileTool(isim=r"IBRAHIM\Banka",alan=["Banka Adı",\
+    "Hesap Tür","Bakiye"])
+banka.menu()
