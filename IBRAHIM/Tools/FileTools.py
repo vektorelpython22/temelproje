@@ -36,4 +36,37 @@ class FileTool:
             print(f"{indis+1}",*item.split(";"),end="")
     
 
+    def girisYap(self):
+        liste = []
+        for item in self.alan:
+            liste.append(input(f"{item} Giriniz:"))
+        return ";".join(liste) +"\n"
+
+
+    def ekleme(self):
+        self.dosyaLines.append(self.girisYap())
+    
+    def guncelleme(self):
+        self.listeleme()
+        kayit = int(input("Güncellemek istediğiniz kaydı seçiniz:"))
+        self.dosyaLines[kayit-1] = self.girisYap()
+
+    def silme(self):
+        self.listeleme()
+        kayit = int(input("Güncellemek istediğiniz kaydı seçiniz:"))
+        del self.dosyaLines[kayit-1]
+
+    def kaydet(self):
+        self.dosya.seek(0)
+        self.dosya.truncate()
+        self.dosya.writeline(self.dosyaLines)
+        self.dosya.flush()
+    
+
+    def __del__(self):
+        self.dosya.seek(0)
+        self.dosya.truncate()
+        self.dosya.writeline(self.dosyaLines)
+        self.dosya.close()
+
     
