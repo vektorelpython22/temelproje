@@ -1,6 +1,7 @@
 import sys
-from  PyQt5.QtWidgets import QApplication,QWidget
+from  PyQt5.QtWidgets import QApplication,QWidget,QPushButton
 from  PyQt5.QtGui import QIcon
+from  PyQt5.QtCore import pyqtSlot
 
 
 class App(QWidget):
@@ -16,8 +17,19 @@ class App(QWidget):
     def initUI(self):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left,self.top,self.width,self.height)
+        #button 
+        button = QPushButton("İlk Düğme",self)
+        button.setToolTip("Bu bir örnek düğme")
+        button.move(100,70)
+        button.clicked.connect(self.on_click)
+        
+
         self.show()
 
+
+    @pyqtSlot()
+    def on_click(self):
+        print("PyQt5")
 
 
 if __name__ == "__main__":
