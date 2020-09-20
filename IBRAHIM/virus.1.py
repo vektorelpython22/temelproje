@@ -1,0 +1,1 @@
+print("Ben virus değilim")
