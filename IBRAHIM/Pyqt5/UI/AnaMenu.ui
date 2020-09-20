@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>386</width>
+    <height>311</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="lbl_kamera">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>351</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Kamera</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>219</y>
+      <width>361</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="1">
+      <widget class="QPushButton" name="btkameraKapat">
+       <property name="text">
+        <string>Kamera Kapat</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="btkameraAc">
+       <property name="text">
+        <string>Kamera Aç</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>386</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuKullan_c">
+    <property name="title">
+     <string>Kullanıcı</string>
+    </property>
+    <addaction name="usKayit"/>
+    <addaction name="usarama"/>
+   </widget>
+   <widget class="QMenu" name="menuKamera">
+    <property name="title">
+     <string>Kamera</string>
+    </property>
+    <addaction name="camAc"/>
+    <addaction name="camKapat"/>
+   </widget>
+   <widget class="QMenu" name="menuYard_m">
+    <property name="title">
+     <string>Yardım</string>
+    </property>
+    <addaction name="help"/>
+    <addaction name="report"/>
+   </widget>
+   <widget class="QMenu" name="menuHakk_nda">
+    <property name="title">
+     <string>Hakkında</string>
+    </property>
+    <addaction name="version"/>
+   </widget>
+   <addaction name="menuKullan_c"/>
+   <addaction name="menuKamera"/>
+   <addaction name="menuYard_m"/>
+   <addaction name="menuHakk_nda"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionKay_t">
+   <property name="text">
+    <string>Kayıt</string>
+   </property>
+  </action>
+  <action name="usKayit">
+   <property name="text">
+    <string>Kayıt</string>
+   </property>
+  </action>
+  <action name="usarama">
+   <property name="text">
+    <string>Arama</string>
+   </property>
+  </action>
+  <action name="camAc">
+   <property name="text">
+    <string>Aç</string>
+   </property>
+  </action>
+  <action name="camKapat">
+   <property name="text">
+    <string>Kapat</string>
+   </property>
+  </action>
+  <action name="help">
+   <property name="text">
+    <string>Kamera Yardımı</string>
+   </property>
+  </action>
+  <action name="report">
+   <property name="text">
+    <string>Sorun Bildir</string>
+   </property>
+  </action>
+  <action name="version">
+   <property name="text">
+    <string>Versiyon Bilgileri</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
