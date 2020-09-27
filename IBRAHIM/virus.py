@@ -1,1 +1,0 @@
-print("Ben virus değilim")
