@@ -6,7 +6,7 @@ from AlbumDB import AlbumDB
 
 class App(QWidget):
     def __init__(self):
-        super().__init__()
+        super().__init__()   
         self.db = AlbumDB()
         uic.loadUi(r"IBRAHIM\SQL\arayuz.ui",self)
         self.btKayit.clicked.connect(self.click)
