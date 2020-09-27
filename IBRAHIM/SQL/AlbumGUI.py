@@ -10,15 +10,33 @@ class App(QWidget):
         self.db = AlbumDB()
         uic.loadUi(r"IBRAHIM\SQL\arayuz.ui",self)
         self.btKayit.clicked.connect(self.click)
+        self.cmbArtist.currentIndexChanged.connect(self.degisti)
+        self.Artistliste = []
+        self.listeGetir()
         self.show()
 
 
     def click(self):
-        liste = ["'"+self.txtTitle.text()+"'",self.txtArtist.text()]
-        if self.db.albumEkle(liste):
-            QMessageBox.information(self,"Bilgi","Bilgileriniz Kaydedilmiştir.",QMessageBox.Ok)
+        if len(self.txtArtist.text()) > 0:
+            liste = ["'"+self.txtTitle.text()+"'",self.txtArtist.text()]
+            elcevap =  QMessageBox.question(self,"Soru","Emin misin?",QMessageBox.Yes | QMessageBox.No,QMessageBox.Yes)
+            if elcevap == QMessageBox.Yes:
+                if self.db.albumEkle(liste):
+                    QMessageBox.information(self,"Bilgi","Bilgileriniz Kaydedilmiştir.",QMessageBox.Ok)
+                else:
+                    QMessageBox.warning(self,"Hata","Kaydedemedik",QMessageBox.Ok)
         else:
-            QMessageBox.warning(self,"Hata","Kaydedemedik",QMessageBox.Ok)
+            QMessageBox.warning(self,"Uyarı","Kaydedemedik",QMessageBox.Ok)
+    def listeGetir(self):
+        self.Artistliste = self.db.artistGetir()
+        for indis,isim in self.Artistliste:
+            self.cmbArtist.addItem(isim)
+        
+
+    def degisti(self):
+        for indis,isim in self.Artistliste:
+            if self.cmbArtist.currentText() == isim:
+                self.txtArtist.setText(str(indis))
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

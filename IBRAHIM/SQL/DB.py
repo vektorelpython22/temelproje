@@ -30,6 +30,25 @@ class DB:
             return -1
 
 
+    def select(self,**kwargs):
+        liste = []
+        try:
+            sorgu = f""" 
+            SELECT * FROM {self.tabloAdi}
+            """           
+            for key,value in kwargs.items():
+                if key == "sart":
+                    sorgu = sorgu + f" WHERE {value} " 
+
+            self.cur.execute(sorgu)
+            liste = self.cur.fetchall()
+        except Exception as hata:
+            liste.append(f"Hata:{hata}")
+        finally:
+            return liste
+        
+
+
     def __del__(self):
         self.cur.close()
         self.db.close()
