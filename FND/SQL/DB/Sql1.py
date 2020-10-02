@@ -1,7 +1,7 @@
 import sqlite3 as sql
 def VeriGetir():
     try:
-        db = sql.connect(r"IBRAHIM\SQL\DB\chinook.db")
+        db = sql.connect(r"FND\SQL\DB\chinook.db")
         cur = db.cursor()
         artiz = input("artist id giriniz:")
         sorgu = f""" SELECT * FROM albums 
@@ -17,4 +17,23 @@ def VeriGetir():
         cur.close()
         db.close()
 
-VeriGetir()
+
+
+def VeriEkle():
+    try:
+        db = sql.connect(r"FND\SQL\DB\chinook.db")
+        cur = db.cursor()
+        artiz = input("artist id giriniz:")
+        sorgu = f""" INSERT INTO artists (Name) 
+        values ('{artiz}')
+        """
+        cur.execute(sorgu)
+        db.commit()
+        return 1
+    except Exception as hata:
+        db.rollback()
+        print(hata)
+        return -1 
+    finally:
+        cur.close()
+        db.close()
