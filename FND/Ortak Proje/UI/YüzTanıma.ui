@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>240</width>
-    <height>320</height>
+    <width>239</width>
+    <height>323</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -42,8 +42,8 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>19</x>
-     <y>19</y>
+     <x>20</x>
+     <y>30</y>
      <width>201</width>
      <height>221</height>
     </rect>
@@ -51,6 +51,19 @@
    <property name="title">
     <string>Kamera</string>
    </property>
+   <widget class="QLabel" name="lbCamera">
+    <property name="geometry">
+     <rect>
+      <x>14</x>
+      <y>25</y>
+      <width>171</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
