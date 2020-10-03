@@ -6,6 +6,7 @@ class DB:
         self.dbAdres = dbAdres
         self.tabloAdi = tabloAdi
         self.db = sql.connect(self.dbAdres)
+        
         self.cur = self.db.cursor()
 
     def insert(self,**kwargs):
