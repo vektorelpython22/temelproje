@@ -15,7 +15,6 @@ resized = cv2.resize(img,boyut,interpolation=cv2.INTER_AREA)
 
 cv2.imwrite(r"IBRAHIM\OPENCV\resimler\duzeltilmis.jpg",resized)
 cv2.imshow("image",resized)
-# cv2.imshow("imageGri",imgGri)
 
 
 cv2.waitKey(0)
