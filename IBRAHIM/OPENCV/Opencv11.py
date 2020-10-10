@@ -1,17 +1,16 @@
 import cv2
 
-
 # cap = cv2.VideoCapture(r"IBRAHIM\OPENCV\people-walking.mp4")
 
-cap = cv2.VideoCapture(1, cv2.CAP_DSHOW)
+cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+fgbg = cv2.BackgroundSubtractorMOG2()
 while True:
     ret,frame = cap.read()
     
-    # gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
-    try:
-        cv2.imshow("frame",frame)
-    except:
-        break
+    fgmask = fgbg.apply(frame)
+    cv2.imshow("frame",frame)
+    cv2.imshow("frame2",fgmask)
+
     if cv2.waitKey(1) & 0xFF == ord("ç"):
         break
 
